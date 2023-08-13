@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Comment Box</title>
+    <style>
+      body {
+        background: #303030;
+        color: #fff;
+        margin: 30px;
+      }
+      p {
+        width: 70%;
+        margin: 20px auto;
+      }
+      h1,
+      h2 {
+        text-align: center;
+      }
+      .item{
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- <main>
+
+      <h1 style="text-align: center">Comment Box</h1>
+      <div id="comments">
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic nemo
+          maiores, illo nesciunt eum reiciendis minus cumque qui voluptatibus.
+          Omnis porem ipsum dolor sit amet consectetur adipisicing elit. Hic
+          nemo maiores, illo nesciunt eum reiciendis minus cumque qui
+          voluptatibus. Omnis. torem ipsum dolor sit amet consectetur
+          adipisicing elit. Hic nemo maiores, illo nesciunt eum reiciendis minus
+          cumque qui voluptatibus. Omnis.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic nemo
+          maiores, illo nesciunt eum reiciendis minus cumque qui voluptatibus.
+          Omnis porem ipsum dolor sit amet consectetur adipisicing elit. Hic
+          nemo maiores, illo nesciunt eum reiciendis minus cumque qui
+          voluptatibus. Omnis. torem ipsum dolor sit amet consectetur
+          adipisicing elit. Hic nemo maiores, illo nesciunt eum reiciendis minus
+          cumque qui voluptatibus. Omnis.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic nemo
+          maiores, illo nesciunt eum reiciendis minus cumque qui voluptatibus.
+          Omnis porem ipsum dolor sit amet consectetur adipisicing elit. Hic
+          nemo maiores, illo nesciunt eum reiciendis minus cumque qui
+          voluptatibus. Omnis. torem ipsum dolor sit amet consectetur
+          adipisicing elit. Hic nemo maiores, illo nesciunt eum reiciendis minus
+          cumque qui voluptatibus. Omnis.
+        </p>
+      </div>
+
+      <div style="text-align: center">
+        <h1 style="margin-top: 50px">Add your comment here:</h1>
+        <textarea name="" id="textArea" cols="70" rows="10"></textarea>
+        <br />
+        <button
+          id="submit"
+          style="
+            background-color: rgb(3, 199, 3);
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            margin-top: 20px;
+          "
+        >
+          Submit
+        </button>
+      </div>
+    </main> -->
+
+    <!-- <main>
+        <h1>Secret info :</h1>
+        <h2 id="pass_info">pass: "asdf"</h2>
+         <input id="input_field" type="text" placeholder="please type delete">
+         <button id="delete_btn" disabled>Delete</button>
+    </main> -->
+<!-- propagation
+    <main id="list-container">
+        <ul id="list">
+            <h1 class="title">List of points:</h1>
+            <li class="item" >Lorem ipsum dol sit amet.</li>
+            <li class="item" id="item-2">Lorem ipsum lor, sit amet consectetur adipisicing.</li>
+            <li class="item">Lorem ipsum dolor adipisicing.</li>
+            <li class="item">Lorem ipsum sit amet  adipisicing.</li>
+            <li class="item">Lorem ipsum consectetur adipisicing.</li>
+        </ul>
+    </main>
+    <script>
+        document.getElementById('item-2').addEventListener('click', function(event){
+            event.stopImmediatePropagation();
+           console.log('item-2 clicked')
+        })
+        document.getElementById('item-2').addEventListener('click', function(event){
+           console.log('item-2 clicked')
+        })
+        document.getElementById('item-2').addEventListener('click', function(event){
+           console.log('item-2 clicked')
+        })
+        document.getElementById('list-container').addEventListener('click', function(){
+            console.log('list-container clicked')
+        })
+        document.getElementById('list').addEventListener('click', function(){
+           console.log('list ul clicked')
+        })
+    </script> -->
+
+
+    <!-- propagation -->
+    <main id="list-container">
+        <ul id="list_ul">
+            <h1 class="title">List of points:</h1>
+            <li class="item" >Lorem ipsum dol sit amet.</li>
+            <li class="item" id="item-2">Lorem ipsum lor, sit amet consectetur adipisicing.</li>
+            <li class="item">Lorem ipsum dolor adipisicing.</li>
+            <li class="item">Lorem ipsum sit amet  adipisicing.</li>
+            <li class="item">Lorem ipsum consectetur adipisicing.</li>
+        </ul>
+        <button id="add_more">Add more</button>
+    </main>
+    <script>
+        const listUl = document.getElementById('list_ul');
+        document.getElementById('add_more').addEventListener('click', function(){
+           console.log(' clicked');
+           const li = document.createElement('li');
+           li.innerText = "New li added.";
+           li.classList = 'item';
+           listUl.appendChild(li);
+        })
+        listUl.addEventListener('click', function(event){
+           event.target.parentNode.removeChild(event.target)
+        })
+        
+    </script>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
